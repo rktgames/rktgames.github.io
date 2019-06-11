@@ -10,28 +10,28 @@ class IdentifyShape extends Phaser.Scene {
 
     preload() {
         //  this.load.image("logo", "./src/assets/images/logo.png");
-        this.load.image('cancel','../assets/cancel.png');  
-    this.load.image('info','../assets/info.png');  
-    this.load.image('setting','../assets/setting.png');
+        this.load.image('cancel', './assets/cancel.png');
+        this.load.image('info', './assets/info.png');
+        this.load.image('setting', './assets/setting.png');
     }
 
     create() {
         var text1 = this.add.text(430, 20, 'Identify the Shapes', { font: '32px comic sans' });
         text1.setTint(0xff00ff, 0xffff00, 0x0000ff, 0xff0000);
-    var bgImage = this.add.image(470,300,'background').setDisplaySize(1050, 500);
-        var container = this.add.container(100, 50, [ bgImage ]);   
+        var bgImage = this.add.image(470, 300, 'background').setDisplaySize(1050, 500);
+        var container = this.add.container(100, 50, [bgImage]);
         this.generateShapes();
 
-        var infoButton = this.add.image(1050,500,'info').setDisplaySize(40, 40).setInteractive();
-        infoButton.on("pointerup", function(){
+        var infoButton = this.add.image(1050, 500, 'info').setDisplaySize(40, 40).setInteractive();
+        infoButton.on("pointerup", function () {
             this.scene.start("Instructions");
         }, this)
-        var settingButton = this.add.image(1050,550,'setting').setDisplaySize(40, 40).setInteractive();
-        settingButton.on("pointerup", function(){
-            this.scene.start("Settings", {gameName: "IdentifyShape"});
+        var settingButton = this.add.image(1050, 550, 'setting').setDisplaySize(40, 40).setInteractive();
+        settingButton.on("pointerup", function () {
+            this.scene.start("Settings", { gameName: "IdentifyShape" });
         }, this)
-        var backButton = this.add.image(1050,590,'back').setDisplaySize(40, 40).setInteractive();
-        backButton.on("pointerup", function(){
+        var backButton = this.add.image(1050, 590, 'back').setDisplaySize(40, 40).setInteractive();
+        backButton.on("pointerup", function () {
             this.scene.start("Main");
         }, this)
     }
@@ -217,7 +217,7 @@ class IdentifyShape extends Phaser.Scene {
         }
         setTimeout(this.generateShapes(this), 500);
     }
-    
+
 
 
 }
