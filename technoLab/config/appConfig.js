@@ -13,8 +13,8 @@
             }
         },
         scale: {
-            //mode: Phaser.Scale.RESIZE,
-            //autoCenter: Phaser.Scale.CENTER_BOTH
+            mode: Phaser.Scale.FIT,
+            autoCenter: Phaser.Scale.CENTER_BOTH
         },
         scene:[Main,Instructions,PlayGame,Settings,GravityGame,AngleGame, IdentifyShape]
     };
